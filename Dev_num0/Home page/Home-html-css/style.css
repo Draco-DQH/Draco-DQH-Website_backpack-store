@@ -1,0 +1,98 @@
+/* Tổng thể cho Header  */
+header {
+  width: 100%; /*Chiều rộng header = chiều ngang trang*/
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /*Đổ bóng nhẹ tạo cảm giác nổi cho header*/
+  background-color: white; /*Màu nền trắng*/
+}
+
+/* Header Top */
+.header_top {
+  display: flex; /*flex căn chỉnh các phần tử theo hàng ngang*/
+  justify-content: space-between; /*căn 2 phần (top-left và top-right) ra hai bên*/
+  align-items: center; /*căn giữa các phẩn tử bên trong theo trục dọc*/
+  padding: 10px 20px; /*thêm khoảng đệm xung quanh nội dung: 10px trên/dưới, 20px trái/phải*/
+  background-color: #000; /*nền màu đen*/
+  color: #fff; /*chữ màu trắng*/
+}
+
+/* Header top_left chứa p */
+.top_left p {
+  font-size: 14px; /*kích thước chữ slogan */
+}
+
+/* Header top_right chứa các a */
+.top_right a {
+  color: #fff; /*chữ màu trắng*/
+  margin-left: 15px; /*thêm khoảng cách giữa các liên kết*/
+  text-decoration: none; /*xóa gạch chân mặc định của liên kết*/
+  font-size: 14px; /*kích thước chữ*/
+}
+/* Header top_right hover  */
+.top_right a:hover {
+  text-decoration: underline; /*khi hover, hiện gạch chân nổi bật*/
+}
+
+/* Header container  */
+.header_container {
+  display: grid; /*căn chỉnh các cột dạng lưới*/
+  grid-template-columns: 1fr 2fr 1fr; /*chia layout thành 3 cột: logo(1 phần), nav(2 phần), giỏ hàng và tìm kiếm(1 phần)*/
+  align-items: center; /*căn giữa nội dung bên trong theo trục dọc*/
+  padding: 15px 20px; /*khoảng đệm header: 15px trên/dưới và 20px trái/phải*/
+  background-color: white; /*nền màu trắng*/
+  border-bottom: 1px solid #f0f0f0; /*phần viền mỏng dưới header phân tách với trang*/
+}
+
+/* Header container_left chứa logo  */
+.container_left a {
+  display: block; /*hình ảnh chiếm toàn bộ diện tích liên kết*/
+}
+/* Header container_left img  */
+.container_left img {
+  height: 60px; /*đặt chiều cao cố định cho img logo*/
+  width: auto; /*tự động chỉnh chiều rộng giữ tỷ lệ ảnh*/
+  display: block; /*loại bỏ khoảng cách dưới hình ảnh*/
+  margin: 0; /*xóa khoảng cách ngoài hình ảnh*/
+}
+
+/* Header container_center chứa navigation  */
+.container_center nav ul {
+  list-style: none; /*xóa dấu chấm/stt của list*/
+  display: flex; /*dùng flexbox sắp xếp mục điều hướng theo hàng ngang*/
+  justify-content: center; /*căn giữa mục điều hướng theo chiều ngang*/
+  gap: 60px; /*khoảng cách giữa các cột mục*/
+}
+.container_center nav ul li {
+  display: inline-block; /*các mục menu xếp theo hàng ngang thay vì hàng dọc*/
+}
+.container_center nav ul li a {
+  text-decoration: none; /*xóa gạch chân mặc định của liên kết*/
+  color: #000; /*màu chữ đen*/
+  font-size: 16px; /*kích thước chữ cho các mục*/
+}
+/* Header container_center hover  */
+.container_center nav ul li a:hover {
+  color: #ff6600; /*khi hover, chữ chuyển màu cam nhấn mạnh*/
+}
+
+/* Header container_right chứa tìm kiếm và giỏ hàng  */
+.container_right {
+  display: flex; /*flexbox sắp xếp biểu tượng tìm kiếm và giỏ*/
+  justify-content: flex-end; /*đẩy toàn bộ nội dung về bên phải*/
+  align-items: center; /*căn giữa các phần tử theo chiều dọc*/
+}
+.container_right input {
+  padding: 5px 10px; /*khoảng đệm trong ô tìm kiếm: 5px trên/dưới, 10px trái/phải*/
+  font-size: 14px; /*kích thước chữ trong ô*/
+  border: 1px solid #ccc; /*đường viền xám nhat quanh ô*/
+  border-radius: 10px; /*bo tròn góc ô tìm kiếm*/
+  margin-right: 15px; /*khoảng cách giữa ô tiamf kiếm và biểu tượng giỏ hàng*/
+}
+.container_right a {
+  text-decoration: none; /*xóa gạch chân mặc định của liên kết*/
+  color: #000; /*chữ màu đen*/
+  font-size: 16px; /*kích thước chữ cho giỏ hàng*/
+}
+/* Header container_right hover  */
+.container_right a:hover {
+  color: #ff6600; /*hover biểu tượng giỏ hàng, chữ chuyển màu cam*/
+}
