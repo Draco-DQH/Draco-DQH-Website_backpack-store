@@ -197,58 +197,67 @@ header {
 
 /* ==================== Tổng thể cho Hero ==================== */
 .hero {
-  position: relative; /* Đặt vị trí của phần hero để quản lý nội dung bên trong */
-  height: 400px; /*chiều cao cho phần hero*/
-  background: url(../img/hero.jpg) no-repeat center center; /*đặt nền, dùng ảnh nền*/
-  background-size: cover; /*ảnh nền phủ kín phần tử*/
-  display: flex;
-  flex-direction: column; /*căn nội dung theo cột*/
-  justify-content: center; /*căn nội dung giữa */
-  align-items: center; /*căn nội dung theo chiều ngang*/
-  padding: 20px; /*khoảng cách từ các cạnh của phần tử*/
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /*đổ bóng cho phần hero*/
-  color: #fff; /*màu nền cho hero*/
-  text-align: left; /* Căn trái văn bản */
-  overflow: hidden; /* Ẩn bất kỳ phần nào của ảnh nền bị vượt quá phần hero */
+  height: 80vh; /*chiều cao phần hero*/
+  background: url(../img/hero.jpg) no-repeat center center; /*hình nền không lặp và căn chỉnh giữa*/
+  background-size: cover; /*hình nền phủ đầy hero*/
+  display: flex; /*flexbox căn chỉnh nội dung*/
+  align-items: center; /*nội dung căn giữa theo chiều dọc*/
+  justify-content: center; /*nội dung căn giữa theo chiều ngang*/
+  color: #fff; /*chữ màu trắng*/
+  text-align: left; /*căn trái văn bản*/
+  padding: 20px; /*khoảng cách bên trong hero*/
+  position: relative; /*căn chỉnh các phần tử con*/
+  background-attachment: fixed; /* Giữ nền cố định khi cuộn trang */
 }
+
+/* Hero content  */
 .hero-content {
-  position: relative; /* Đặt vị trí của nội dung để quản lý việc căn chỉnh */
-  max-width: 500px; /*giới hạn chiều rộng nội dung*/
-  z-index: 1; /*nội dung nằm trên ảnh nền*/
-  padding: 20px; /* Khoảng cách bên trong phần nội dung */
-  border-radius: 8px; /* Bo tròn các góc của phần nội dung */
+  display: flex; /*flex sắp xếp các phần tử*/
+  flex-direction: row; /*săp xếp phần tử theo hàng ngang*/
+  align-items: center; /*căn giữa các phần tử theo chiều dọc*/
+  max-width: 1200px; /*chiều rộng tối đa cho hero*/
+  width: 100%; /*chiều rộng content = chiều rộng hero*/
+}
+/* Hero content left  */
+.hero-content-left {
+  flex: 1; /*chiếm toàn bộ không gian còn lại*/
+  padding: 20px; /*khoảng cách phần nội dung*/
+}
+.hero-content-left h2 {
+  font-size: 4rem; /*kích thước chữ lớn*/
+  color: #000; /*màu chữ đen cho tiêu đề h2*/
+  margin-bottom: 10px; /*khoảng cách giữa các tiêu đề và đoạn văn bản*/
+}
+.hero-content-left p {
+  font-size: 1.5rem; /* kích thước chữ nhỏ hơn tiêu đề */
+  color: #000; /*màu chữ cho p*/
+  margin-bottom: 30px; /* khoảng cách giữa đoạn văn bản và nút bấm */
+  text-align: center; /*căn giữa đoạn văn bản so với tiêu đề*/
+  display: inline-block; /*kích thước phù hợp với nội dung*/
 }
 
-/* Tiêu đề h trong hero  */
-.hero h2 {
-  font-size: 2.5em; /*kích thước font lớn cho tiêu đề*/
-  margin-bottom: 10px; /*khoảng cách phía dưới*/
-  color: #000;
-}
-
-/* Mô tả trong hero  */
-.hero p {
-  font-size: 1.2em; /*kích thước font mô tả*/
-  margin-bottom: 20px; /*khoảng cách phía dưới*/
-  color: #000;
-}
-
-/* btn-primary */
-.hero .btn-primary {
-  display: inline-block; /* kiểu dáng nút bấm */
-  background-color: #f04a4c; /* màu nền đỏ cho nút */
-  color: #fff; /* màu chữ trắng cho nút */
-  padding: 10px 20px; /* khoảng cách bên trong nút: trên/dưới, trái/phải */
-  font-size: 1em; /* kiểu chữ cho nút */
+/* Nút bấm btn  */
+.btn {
+  display: inline-block; /* hiển thị nút dưới dạng khối */
+  padding: 15px 30px; /* khoảng cách bên trong nút: trên/dưới, trái/phải */
+  font-size: 1.25rem; /* kích thước chữ */
+  color: #fff; /* màu chữ trắng */
+  background-color: #007bff; /* màu nền nút */
+  border: none; /* loại bỏ viền mặc định của nút */
   border-radius: 5px; /* bo tròn các góc nút */
-  border: none; /* bỏ viền mặc định của nút */
-  font-weight: bold; /* Làm đậm chữ nút */
-  cursor: pointer; /* đặt con trỏ chuột thành tay khi di chuột qua nút */
-  transition: background-color 0.3s ease; /*màu nền khi di chuột qua nút*/
+  text-decoration: none; /* loại bỏ gạch chân */
+  transition: background-color 0.3s ease; /* hiệu ứng đổi màu nền khi di chuột */
+  margin-top: 20px; /* Khoảng cách từ đoạn văn bản đến nút bấm */
 }
-/* Hiệu ứng khi di chuột qua nút */
-.hero .btn-primary:hover {
-  background-color: #d43f41;
+/* Hiệu ứng btn  */
+.btn:hover {
+  transform: scale(1.1); /*phóng to nút khi di chuột*/
+  background-color: #0056b3; /* màu nền nút khi di chuột qua */
+}
+
+/* Hero content right */
+.hero-content-right {
+  flex: 1; /*chiếm toàn bộ không gian còn lại*/
 }
 /* ==================== Tổng thể cho Products ==================== */
 
