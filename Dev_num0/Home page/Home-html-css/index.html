@@ -8,54 +8,54 @@
     <!-- Liên kết file CSS -->
   </head>
   <body>
-    <main>
-      <!-- Header Section: chứa thông tin logo, biểu tượng người dùng, và thanh tìm kiếm -->
-      <header>
-        <!-- Header top  -->
-        <div class="header_top">
-          <div class="top_left">
-            <p>Get your Bag - Feel your Lux.</p>
-          </div>
-          <div class="top_right">
-            <a href="#">Tài khoản</a> | <a href="#">Giỏ hàng</a> |
-            <a href="#">FAQs</a>
-          </div>
+    <!-- Header Section: chứa thông tin logo, biểu tượng người dùng, và thanh tìm kiếm -->
+    <header>
+      <!-- Header top  -->
+      <div class="header_top">
+        <div class="top_left">
+          <p>Get your Bag - Feel your Lux.</p>
         </div>
-        <!-- Header container  -->
-        <div class="header_container">
-          <div class="container_left">
-            <a href="index.html">
-              <img src="img/logo.png" alt="BagLux Logo" />
-            </a>
-            <!-- Logo thương hiệu -->
-          </div>
-          <!-- Navigation sẽ nằm ở giữa -->
-          <div class="container_center">
-            <nav>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>
-                  <a href="#">Sản phẩm</a>
-                  <!-- Menu con  -->
-                  <ul class="dropdown">
-                    <li><a href="#">Phổ biến</a></li>
-                    <li><a href="#">Bán chạy</a></li>
-                    <li><a href="#">Thời trang</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Về chúng tôi</a></li>
-                <li><a href="#">Liên hệ</a></li>
-              </ul>
-            </nav>
-          </div>
-          <!-- Biểu tượng tìm kiếm và giỏ hàng ở bên phải -->
-          <div class="container_right">
-            <input type="text" placeholder="Tìm kiếm..." />
-            <a href="#">Giỏ hàng</a>
-          </div>
+        <div class="top_right">
+          <a href="#">Tài khoản</a> | <a href="#">Giỏ hàng</a> |
+          <a href="#">FAQs</a>
         </div>
-      </header>
+      </div>
+      <!-- Header container  -->
+      <div class="header_container">
+        <div class="container_left">
+          <a href="index.html">
+            <img src="img/logo1.png" alt="BagLux Logo" />
+          </a>
+          <!-- Logo thương hiệu -->
+        </div>
+        <!-- Navigation sẽ nằm ở giữa -->
+        <div class="container_center">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="#">Sản phẩm</a>
+                <!-- Menu con  -->
+                <ul class="dropdown">
+                  <li><a href="#">Phổ biến</a></li>
+                  <li><a href="#">Bán chạy</a></li>
+                  <li><a href="#">Thời trang</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Về chúng tôi</a></li>
+              <li><a href="#">Liên hệ</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Biểu tượng tìm kiếm và giỏ hàng ở bên phải -->
+        <div class="container_right">
+          <input type="text" placeholder="Tìm kiếm..." />
+          <a href="#">Giỏ hàng</a>
+        </div>
+      </div>
+    </header>
 
+    <main>
       <!-- Hero Section: Đây là phần giới thiệu, hình ảnh chính của trang web -->
       <section class="hero">
         <div class="hero-content">
@@ -69,49 +69,63 @@
         </div>
       </section>
 
-      <!-- Product Section: Phần hiển thị sản phẩm nổi bật -->
-      <section class="product">
-        <h2>Sản phẩm nổi bật</h2>
-        <div class="product_list">
-          <!-- Danh sách sản phẩm sẽ hiển thị ở đây -->
-          <div class="product_item">
-            <img src="backpack1.jpg" alt="Ba lô 1" />
-            <p>Ba lô thời trang</p>
-            <p>500,000 VND</p>
-          </div>
-          <div class="product_item">
-            <img src="backpack2.jpg" alt="Ba lô 2" />
-            <p>Ba lô công sở</p>
-            <p>750,000 VND</p>
-          </div>
-        </div>
-      </section>
+      <!-- Product Section: Phần hiển thị danh sách sản phẩm  -->
+      <section class="product"></section>
 
-      <!-- Categories Section: Phân loại sản phẩm theo nhóm -->
-      <section class="categories">
-        <h2>Danh mục sản phẩm</h2>
-        <ul>
-          <li><a href="#">Ba lô công sở</a></li>
-          <li><a href="#">Ba lô thời trang</a></li>
-          <li><a href="#">Ba lô cho laptop</a></li>
-          <li><a href="#">Ba lô du lịch</a></li>
-        </ul>
-      </section>
+      <!-- Featured categories Section: Danh mục nổi bật -->
+      <section class="featured-categories"></section>
+
+      <!-- Best sellers: Sản phẩm bán chạy  -->
+      <section class="best-seller"></section>
+
+      <!-- Sales: Khuyến mãi  -->
+      <section class="sales"></section>
     </main>
 
     <!-- Footer Section: Chứa thông tin liên hệ và các chính sách -->
-    <footer>
-      <div class="footer_left">
-        <h3>BagLux</h3>
-        <p>Địa chỉ: 123 Đường ABC, Quận X, TP HCM</p>
-        <p>Email: contact@baglux.vn</p>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Cột bên trái: Logo và thông tin liên hệ -->
+        <div class="footer-left">
+          <img src="img/logo1.png" alt="BagLux Logo" />
+          <div class="contact-info">
+            <p>
+              BagLux - Địa chỉ uy tín cung cấp các loại ba lô thời trang và chất
+              lượng.
+            </p>
+            <p>
+              Email: <a href="mailto:contact@baglux.com">contact@baglux.com</a>
+            </p>
+            <p>Hotline: <strong>1900 123 456</strong></p>
+          </div>
+        </div>
+
+        <!-- Cột ở giữa: Liên kết nhanh -->
+        <div class="footer-center">
+          <h3>Liên kết nhanh</h3>
+          <ul>
+            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Khuyến mãi</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột bên phải: Chính sách -->
+        <div class="footer-right">
+          <h3>Chính sách</h3>
+          <ul>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Chính sách vận chuyển</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer_right">
-        <p>&copy; 2024 BagLux. Mọi quyền được bảo lưu.</p>
-        <p>
-          <a href="#">Chính sách bảo mật</a> |
-          <a href="#">Điều khoản sử dụng</a>
-        </p>
+
+      <!-- Bản quyền -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 BagLux. All rights reserved.</p>
       </div>
     </footer>
   </body>

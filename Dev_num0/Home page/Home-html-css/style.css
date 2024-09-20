@@ -35,7 +35,6 @@ header {
   text-decoration: none; /*xóa gạch chân mặc định của liên kết*/
   font-size: 14px; /*kích thước chữ*/
 }
-/* Header top_right hover  */
 .top_right a:hover {
   text-decoration: underline; /*khi hover, hiện gạch chân nổi bật*/
 }
@@ -66,15 +65,13 @@ header {
   text-align: left; /* Căn trái cho logo */
   align-items: center;
 }
-/* Header container_left chứa logo  */
 .container_left a {
   display: block; /*hình ảnh chiếm toàn bộ diện tích liên kết*/
   font-size: 20px; /* kích thước chữ */
   font-weight: 500; /* độ dày cho chữ */
 }
-/* Header container_left img  */
 .container_left img {
-  height: 80px; /*đặt chiều cao cố định cho img logo*/
+  height: 60px; /*đặt chiều cao cố định cho img logo*/
   width: auto; /*tự động chỉnh chiều rộng giữ tỷ lệ ảnh*/
   display: block; /*loại bỏ khoảng cách dưới hình ảnh*/
   margin: 0; /*xóa khoảng cách ngoài hình ảnh*/
@@ -86,7 +83,6 @@ header {
   justify-content: center; /* căn giữa nội dung của navigation */
   text-align: center;
 }
-/* Header container_center chứa navigation  */
 .container_center nav ul {
   display: flex; /* flex các mục menu theo hàng ngang */
   justify-content: space-around; /* khoảng cách đều giữa các mục menu */
@@ -98,14 +94,12 @@ header {
   margin: 0 15px; /* Thêm khoảng cách giữa các mục menu */
   position: relative; /* vị trí tương đối để menu con nằm dưới */
 }
-/* Mục chính của Menu con  */
 .container_center nav ul li a {
   text-decoration: none; /* xóa gạch chân */
   color: #000; /* màu chữ đen */
   font-size: 20px; /* kích thước chữ */
   font-weight: 500; /* độ dày chữ vừa phải */
 }
-/* Header container_center hover  */
 .container_center nav ul li a:hover {
   font-size: 20px; /* Tăng kích thước khi hover để nổi bật */
   color: #ff6600; /*khi hover, chữ chuyển màu cam nhấn mạnh*/
@@ -175,7 +169,6 @@ header {
   color: #000; /*chữ màu đen*/
   font-size: 20px; /*kích thước chữ cho giỏ hàng*/
 }
-/* Header container_right hover  */
 .container_right a:hover {
   color: #ff6600; /*hover biểu tượng giỏ hàng, chữ chuyển màu cam*/
 }
@@ -249,7 +242,6 @@ header {
   transition: background-color 0.3s ease; /* hiệu ứng đổi màu nền khi di chuột */
   margin-top: 20px; /* Khoảng cách từ đoạn văn bản đến nút bấm */
 }
-/* Hiệu ứng btn  */
 .btn:hover {
   transform: scale(1.1); /*phóng to nút khi di chuột*/
   background-color: #0056b3; /* màu nền nút khi di chuột qua */
@@ -259,6 +251,151 @@ header {
 .hero-content-right {
   flex: 1; /*chiếm toàn bộ không gian còn lại*/
 }
+
 /* ==================== Tổng thể cho Products ==================== */
 
 /* ==================== Tổng thể cho Footer ==================== */
+/* Footer  */
+.footer {
+  background-color: #000; /* Màu nền đen */
+  color: white; /* Màu chữ trắng  */
+  padding: 50px 0; /* Khoảng cách trên và dưới rộng rãi */
+  text-align: center; /* Căn chữ theo lề trái */
+}
+
+/* Footer container  */
+.footer-container {
+  display: flex; /* Bố cục theo hàng ngang dạng lưới 3 cột */
+  justify-content: space-between; /* Khoảng cách đều giữa các cột */
+  flex-wrap: wrap; /* Đảm bảo footer vẫn đẹp trên các màn hình nhỏ */
+  max-width: 1200px; /* Chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa container */
+  padding: 0; /* xóa khoảng cách để cột sát lề */
+  gap: 20px; /* khoảng cách giữa các cột */
+}
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1; /* Các cột có chiều rộng bằng nhau */
+  padding: 0 10px; /* Khoảng cách bên trái và bên phải cho các cột */
+
+  display: flex; /* flexbox cho các cột */
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  justify-content: space-between; /* Tạo khoảng cách đều giữa tiêu đề và nội dung */
+}
+.footer h3 {
+  margin-bottom: 5px; /* Khoảng cách dưới tiêu đề */
+}
+.footer ul {
+  list-style: none; /* Loại bỏ dấu chấm đầu dòng */
+  padding: 0; /* Xóa khoảng cách */
+}
+.footer ul li {
+  margin: 8px 0; /* Khoảng cách giữa các mục trong danh sách */
+}
+.footer a {
+  text-decoration: none; /* Xóa gạch chân */
+  color: #007bff; /* Màu liên kết */
+}
+.footer a:hover {
+  text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* Footer Left: cột logo và contact info */
+.footer-left {
+  flex: 1; /* Cột chiếm 1 phần không gian */
+  min-width: 200px; /* Chiều rộng tối thiểu */
+  padding-left: 0; /* khoảng cách bên trái */
+  text-align: left; /* nội dung căn trái */
+}
+.footer-left img {
+  max-width: 100px; /* kích thước logo */
+  margin-bottom: 15px; /* Khoảng cách dưới logo */
+}
+/* Contact info  */
+.contact-info {
+  margin-top: 15px; /* Khoảng cách trên giữa logo và thông tin liên lạc */
+  font-size: 16px; /* Kích thước chữ nhỏ hơn để tạo sự tinh tế */
+  color: #aaa; /* Màu chữ tối cho dễ đọc */
+}
+.contact-info p {
+  margin: 20px 0; /* Khoảng cách giữa các đoạn văn trong thông tin liên lạc */
+}
+.contact-info a {
+  color: #007bff; /* Màu liên kết */
+  text-decoration: none; /* Xóa gạch chân */
+}
+.contact-info a:hover {
+  text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* Footer Center: liên kết nhanh */
+.footer-center {
+  min-width: 200px; /* chiều rộng tối thiểu*/
+  text-align: left;
+}
+.footer-center h3 {
+  font-size: 1.2rem; /* Kích thước tiêu đề của liên kết */
+  color: white; /* chữ màu trắng*/
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+.footer-center ul {
+  list-style-type: none; /* Loại bỏ gạch đầu dòng */
+  padding: 0;
+}
+.footer-center ul li {
+  margin-bottom: 10px; /* Khoảng cách giữa các liên kết */
+}
+.footer-center ul li a {
+  color: #ccc; /* Màu chữ trắng xám cho liên kết */
+  text-decoration: none; /* Loại bỏ gạch chân */
+  font-size: 1rem; /* Kích thước chữ của liên kết */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+}
+.footer-center ul li a:hover {
+  color: #ff4b5c; /* Đổi màu khi hover để tạo tương tác */
+}
+
+/* Footer Right: Chính sách */
+.footer-right {
+  min-width: 200px; /* Chiều rộng tối thiểu*/
+  text-align: left; /* căn lề trái nội dung*/
+}
+.footer-right h3 {
+  font-size: 1.5rem; /* Kích thước tiêu đề của chính sách */
+  color: white; /* chữ màu trắng */
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+.footer-right ul {
+  list-style-type: none; /* Loại bỏ gạch đầu dòng */
+  padding: 0;
+}
+.footer-right ul li {
+  margin-bottom: 10px; /* Khoảng cách giữa các liên kết */
+}
+.footer-right ul li a {
+  color: #ccc; /* Màu chữ xám */
+  text-decoration: none; /* Loại bỏ gạch chân */
+  font-size: 1rem; /* Kích thước chữ của liên kết */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+}
+.footer-right ul li a:hover {
+  color: #ff4b5c; /* Đổi màu khi hover để tạo tương tác */
+}
+
+/* Footer Bottom: Phần dưới cùng, bản quyền */
+.footer-bottom {
+  border-top: 1px solid #444; /* đường viền phía trên */
+  text-align: center; /* Căn giữa nội dung */
+  padding-top: 15px; /* khoảng cách dưới */
+  margin-top: 30px; /* Khoảng cách phía trên */
+  font-size: 16px; /* Kích thước chữ  */
+  color: #aaa; /* Màu xám nhạt cho phần bản quyền */
+}
+.footer-bottom a {
+  color: #ff4b5c; /* Màu đỏ giống mẫu */
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
