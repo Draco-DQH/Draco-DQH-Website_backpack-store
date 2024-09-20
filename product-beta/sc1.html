@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        /* CSS giống như phần trước */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        aside {
+            flex: 1;
+            max-width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .products {
+            flex: 3;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .product-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+            width: calc(33.333% - 40px);
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        @media(max-width: 768px) {
+            .product-item {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media(max-width: 480px) {
+            .product-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Website Product
+    </header>
+
+    <nav>
+        <a href="screen1.html">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <aside>
+            <h2>Options</h2>
+            <ul>
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+            </ul>
+        </aside>
+
+        <section class="products">
+            <div class="product-item" data-id="1" onclick="goToDetail(1)">
+                <h3>Product 1</h3>
+                <p>Description of Product 1.</p>
+            </div>
+            <div class="product-item" data-id="2" onclick="goToDetail(2)">
+                <h3>Product 2</h3>
+                <p>Description of Product 2.</p>
+            </div>
+            <div class="product-item" data-id="3" onclick="goToDetail(3)">
+                <h3>Product 3</h3>
+                <p>Description of Product 3.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Your Website. All rights reserved.
+    </footer>
+
+    <script>
+        function goToDetail(id) {
+            // Chuyển hướng đến trang chi tiết sản phẩm và truyền ID sản phẩm qua URL
+            window.location.href = `sc2.html?id=${id}`;
+        }
+    </script>
+</body>
+</html>

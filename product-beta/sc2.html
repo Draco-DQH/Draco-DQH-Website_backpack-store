@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .product-detail {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        .product-detail img {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .product-detail h1 {
+            margin-bottom: 10px;
+        }
+
+        .product-detail p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .product-detail .price {
+            font-size: 24px;
+            color: #E74C3C;
+            margin-bottom: 20px;
+        }
+
+        .product-detail button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Product Detail
+    </header>
+
+    <nav>
+        <a href="screen1.html">Home</a>
+        <a href="sc1.html">Products</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section class="product-detail">
+        <img src="https://via.placeholder.com/300" alt="Product Image">
+        <h1 id="product-title">Product</h1>
+        <p id="product-description">Description of Product.</p>
+        <p class="price" id="product-price">$49.99</p>
+        <button>Add to Cart</button>
+    </section>
+
+    <footer>
+        &copy; 2024 Your Website. All rights reserved.
+    </footer>
+
+    <script>
+        // Lấy thông tin sản phẩm từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        // Thông tin sản phẩm mẫu
+        const products = [
+            { id: 1, name: "Product 1", description: "This is Product 1.", price: "$49.99" },
+            { id: 2, name: "Product 2", description: "This is Product 2.", price: "$59.99" },
+            { id: 3, name: "Product 3", description: "This is Product 3.", price: "$69.99" }
+        ];
+
+        // Hiển thị thông tin sản phẩm dựa vào ID
+        const product = products.find(p => p.id == productId);
+        if (product) {
+            document.getElementById('product-title').textContent = product.name;
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-price').textContent = product.price;
+        } else {
+            document.getElementById('product-title').textContent = "Product not found!";
+            document.getElementById('product-description').textContent = "";
+            document.getElementById('product-price').textContent = "";
+        }
+    </script>
+</body>
+</html>
