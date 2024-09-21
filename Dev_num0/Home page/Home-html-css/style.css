@@ -253,6 +253,128 @@ header {
 }
 
 /* ==================== Tổng thể cho Products ==================== */
+/* Product  */
+.product {
+  padding: 20px; /* Khoảng cách xung quanh sản phẩm */
+  text-align: center; /* Căn giữa văn bản trong */
+  background-color: #f9f9f9; /* Màu nền sáng */
+  margin: 0 auto; /* Căn giữa phần sản phẩm */
+  max-width: 1200px; /* Đặt chiều rộng tối đa cho phần sản phẩm */
+}
+.product h2 {
+  text-align: center; /* căn giữa nội dung */
+  font-size: 2em; /* kích thước */
+  margin-bottom: 40px; /* khoảng cách dưới */
+  font-family: "Arial", sans-serif; /* Font chữ */
+  color: #333; /* Màu chữ đậm */
+}
+
+/* Product Container */
+.product-container {
+  display: grid; /* sắp xếp dạng lưới */
+  grid-template-columns: repeat(3, 1fr); /* Mỗi dòng chứa 3 sản phẩm */
+  gap: 20px; /* Khoảng cách giữa các sản phẩm */
+  justify-items: center; /* Căn giữa sản phẩm trong ô */
+}
+
+/* Product Items */
+.product-item {
+  background-color: #fff; /* màu nền */
+  padding: 5px; /* khoảng cách xung quanh ảnh với ô */
+  border-radius: 10px; /* Bo góc nhẹ tạo cảm giác mềm mại */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng để sản phẩm nổi lên */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng khi hover */
+  text-align: center; /* Căn giữa nội dung */
+  width: 80%;
+}
+.product-item:hover {
+  transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Bóng lớn hơn khi hover */
+}
+.product-item img {
+  width: 40%; /* Ảnh chiếm toàn bộ chiều ngang ô */
+  height: auto; /* chiều cao tự động */
+  border-radius: 20px; /* bo góc viền ảnh */
+  background-color: #fff; /* màu nền cho ảnh */
+  margin-bottom: 15px; /* khoảng cách dưới với ô */
+}
+.product-item h3 {
+  font-size: 1.2em; /* kích cỡ chữ */
+  color: #333; /* màu chữ */
+  margin-bottom: 10px; /* khoảng cách chữ dưới */
+  font-family: "Arial", sans-serif; /* font chữ */
+}
+.product-item .price {
+  font-size: 1.1em; /* kích thước */
+  color: #ff6b6b; /* màu chữ */
+  margin-bottom: 15px; /* khoảng cách dưới chữ */
+  font-weight: bold; /* độ đậm của chữ */
+}
+
+/* Button add cart  */
+.product-item .add-cart {
+  background-color: #ff6b6b; /* Màu nền  */
+  color: white; /* màu chữ */
+  border: none; /* bỏ viền */
+  padding: 10px 20px; /* khoảng cách trên/dưới, trái/phải */
+  border-radius: 10px; /* bo viền nút */
+  cursor: pointer; /* con trỏ tay khi hover */
+  transition: background-color 0.3s ease;
+}
+.product-item .add-cart:hover {
+  background-color: #ff4a4a; /* Đổi màu nút khi hover */
+}
+
+/* ==================== Tổng thể cho Featured-Categories ==================== */
+/* Featured Categories  */
+.featured-categories {
+  padding: 40px 20px; /* khoảng cách xung quanh */
+  background-color: #fff; /* Màu nền */
+  text-align: center; /* Căn giữa nội dung */
+}
+.featured-categories h2 {
+  font-size: 2em; /* Kích thước chữ */
+  margin-bottom: 30px; /* Khoảng cách dưới tiêu đề */
+  color: #000; /* Màu chữ tối */
+}
+
+/* Categories container */
+.categories-container {
+  display: flex; /* flex để căn chỉnh */
+  justify-content: center; /* Căn giữa các mục */
+  gap: 20px; /* Khoảng cách giữa các mục */
+  flex-wrap: wrap; /* các mục có thể xuống hàng */
+}
+
+/* Categories items */
+.categories-item {
+  background: #fff; /* Màu nền trắng */
+  border-radius: 10px; /* Bo góc */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  overflow: hidden; /* Ẩn phần thừa */
+  transition: transform 0.3s; /* Hiệu ứng chuyển động khi hover */
+
+  /* Hiệu ứng viền nổi bật  */
+  border: 2px solid transparent; /* Viền trong suốt ban đầu */
+  transition: border-color 0.3s; /* Thời gian chuyển động */
+}
+.categories-item img {
+  width: 40%; /* hình ảnh chiếm toàn bộ khung */
+  height: auto; /* Tự động điều chỉnh chiều cao */
+  display: block; /* Xóa khoảng trắng bên dưới hình ảnh */
+}
+.categories-item h3 {
+  font-size: 1.5rem; /* Kích thước chữ */
+  margin: 20px 0; /* Khoảng cách trên/dưới, trái/phải */
+  color: #000; /* Màu chữ */
+}
+.categories-item:hover {
+  transform: translateY(-5px); /* Nâng nhẹ lên khi hover */
+  border-color: #ff4081; /* Màu viền nổi bật khi hover */
+}
+/* ==================== Tổng thể cho Best Seller ==================== */
+
+/* ==================== Tổng thể cho Sales ==================== */
 
 /* ==================== Tổng thể cho Footer ==================== */
 /* Footer  */
