@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column; /* Đặt hướng theo chiều dọc */
+  min-height: 100vh; /* Chiều cao tối thiểu của body */
+  margin: 0; /* Không có khoảng cách */
+}
 /* ==================== Tổng thể cho Header ==================== */
 header {
   width: 100%; /*Chiều rộng header = chiều ngang trang*/
@@ -464,14 +470,104 @@ header {
 .best-seller-item:hover .add-to-cart {
   bottom: -5px; /* Đưa nút lên vị trí hiển thị */
 }
+
 /* ==================== Tổng thể cho Sales ==================== */
+
+/* Sales  */
+.sales {
+  flex: 1; /* Phần sales chiếm không gian còn lại */
+  position: relative; /* Chứa các phần tử khác bên trong */
+}
+.sales-banner {
+  background-image: url(../img/Banner.webp); /* Ảnh nền banner */
+  background-size: cover; /* Làm cho ảnh nền bao phủ toàn bộ khu vực */
+  background-position: center; /* Căn giữa ảnh nền */
+  color: #000; /* Đổi màu chữ cho nổi bật trên nền tối */
+  padding: 40px 20px; /* Khoảng cách bên trong cho banner */
+  margin-bottom: 20px; /* Thêm khoảng cách phía dưới cho banner */
+  text-align: center; /* Căn giữa nội dung */
+}
+.sales h2 {
+  font-size: 2.5em; /* Kích thước chữ lớn cho tiêu đề */
+  margin-bottom: 40px; /* Khoảng cách phía dưới tiêu đề */
+}
+
+/* Sales content  */
+.sales-content {
+  display: flex; /* flex để tạo hai cột */
+  justify-content: space-between; /* Căn giữa giữa hai cột */
+  align-items: flex-start; /* Căn chỉnh theo chiều dọc */
+  gap: 0px; /* Khoảng cách giữa hai cột */
+  margin-top: 30px; /* Khoảng cách phía trên nội dung */
+}
+
+/* Sales Text  */
+.sales-text {
+  flex: 1; /* Cột nội dung chiếm 1 phần */
+  background-color: rgba(255, 255, 255, 0.5); /* Nền bán trong suốt */
+  padding: 20px; /* Khoảng cách bên trong cột nội dung */
+  border-radius: 8px; /* Bo góc cho cột nội dung */
+}
+.sales-text h3 {
+  font-size: 2em; /* Kích thước chữ lớn cho tiêu đề khuyến mãi */
+  margin: 10px 0; /* Khoảng cách phía trên và dưới */
+}
+
+/* Sales Button  */
+.btn {
+  background-color: #ff5e5e; /* Màu nền nút */
+  color: white; /* Màu chữ trắng */
+  padding: 15px 25px; /* Khoảng cách trong nút */
+  border: none; /* Không viền */
+  border-radius: 5px; /* Bo góc cho nút */
+  text-decoration: none; /* Xóa gạch chân */
+  display: inline-block; /* Căn chỉnh bên trong */
+  margin-top: 25px; /* Khoảng cách phía trên nút */
+  font-size: 1.1em; /* Kích thước chữ cho nút */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+}
+.btn:hover {
+  background-color: #e65c5c; /* Đổi màu khi hover */
+}
+
+/* Sales Discount  */
+.discount-image {
+  flex: 1; /* Cột hình ảnh chiếm 1 phần */
+  text-align: center; /* Canh giữa hình ảnh và văn bản */
+}
+.discount-image img {
+  width: 100%; /* Ảnh sản phẩm chiếm 100% chiều rộng */
+  max-width: 300px; /* Chiều rộng tối đa cho hình ảnh sản phẩm */
+  border-radius: 8px; /* Bo góc cho hình ảnh sản phẩm */
+  margin-bottom: 25px; /* Khoảng cách dưới hình ảnh */
+}
+.discount-image h3 {
+  font-size: 1.5em; /* Kích thước chữ */
+  margin: 10px 0; /* Khoảng cách phía trên và dưới */
+}
+
+.price,
+.discount-price {
+  font-size: 1em; /* Kích thước chữ */
+  margin: 5px 0; /* Khoảng cách giữa các phần tử */
+  color: #000; /* Màu chữ trắng  */
+}
+
+.original-price {
+  text-decoration: line-through; /* Gạch chân giá gốc */
+  color: rgba(123, 123, 123, 0.7); /* Màu nhạt cho giá gốc */
+}
+
+.discount-price strong {
+  color: #ff5e5e; /* Màu nổi bật cho giá khuyến mãi */
+}
 
 /* ==================== Tổng thể cho Footer ==================== */
 /* Footer  */
 .footer {
   background-color: #000; /* Màu nền đen */
   color: white; /* Màu chữ trắng  */
-  padding: 50px 0; /* Khoảng cách trên và dưới rộng rãi */
+  padding: 20px; /* Khoảng cách trên và dưới rộng rãi */
   text-align: center; /* Căn chữ theo lề trái */
 }
 
