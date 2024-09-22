@@ -149,35 +149,40 @@
       <!-- Best sellers: Sản phẩm bán chạy  -->
       <section class="best-seller">
         <h2>Sản phẩm bán chạy</h2>
-        <!-- Tiêu đề phần sản phẩm bán chạy -->
-        <div class="best-seller-container">
-          <!-- Mỗi sản phẩm sẽ nằm trong một div có class là best-seller-item -->
-          <div class="best-seller-item">
-            <img src="img/best-seller1.jpg" alt="Sản phẩm bán chạy 1" />
-            <!-- Hình ảnh sản phẩm -->
-            <h3>Sản phẩm bán chạy 1</h3>
-            <!-- Tên sản phẩm -->
-            <p class="price">Giá: 700.000 VNĐ</p>
-            <!-- Giá sản phẩm -->
-            <button class="add-to-cart">Thêm vào giỏ hàng</button>
-            <!-- Nút thêm vào giỏ hàng -->
-          </div>
 
-          <div class="best-seller-item">
-            <img src="img/best-seller2.jpg" alt="Sản phẩm bán chạy 2" />
+        <div class="best-seller-container">
+          <article class="best-seller-item">
+            <!-- Thẻ figure giúp dễ quản lý hình ảnh và chú thích -->
+            <figure>
+              <span class="new-label">Mới</span>
+              <img src="img/Sale1.webp" alt="Sản phẩm bán chạy 1" />
+            </figure>
+            <h3>Sản phẩm bán chạy 1</h3>
+            <p class="price">Giá: 700.000 VNĐ</p>
+            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+          </article>
+          <!-- Kết thúc sản phẩm -->
+
+          <article class="best-seller-item">
+            <figure>
+              <span class="new-label">Mới</span>
+              <img src="img/Sale2.webp" alt="Sản phẩm bán chạy 2" />
+            </figure>
             <h3>Sản phẩm bán chạy 2</h3>
             <p class="price">Giá: 800.000 VNĐ</p>
             <button class="add-to-cart">Thêm vào giỏ hàng</button>
-          </div>
+          </article>
 
-          <div class="best-seller-item">
-            <img src="img/best-seller3.jpg" alt="Sản phẩm bán chạy 3" />
+          <article class="best-seller-item">
+            <figure>
+              <img src="img/Sale3.webp" alt="Sản phẩm bán chạy 3" />
+            </figure>
             <h3>Sản phẩm bán chạy 3</h3>
             <p class="price">Giá: 750.000 VNĐ</p>
             <button class="add-to-cart">Thêm vào giỏ hàng</button>
-          </div>
+          </article>
 
-          <!-- Thêm nhiều sản phẩm bán chạy ở đây -->
+          <!-- Lặp lại cấu trúc nếu muốn thêm sản phẩm -->
         </div>
       </section>
 
@@ -214,8 +219,6 @@
               Giá khuyến mãi: <strong>700.000 VNĐ</strong>
             </p>
             <!-- Giá khuyến mãi -->
-            <button class="add-to-cart">Thêm vào giỏ hàng</button>
-            <!-- Nút thêm vào giỏ hàng -->
           </div>
         </div>
       </section>
