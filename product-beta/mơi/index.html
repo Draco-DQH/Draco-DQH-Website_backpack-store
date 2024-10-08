@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sc1.css">
+    <title>Product Page</title>
+</head>
+<body>
+
+    <header>
+        Product Page
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation1">
+        <div class="logo">
+            <img src="https://via.placeholder.com/50x50" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="sc1.html">Products</a>
+            <div class="search-bar">
+                <img src="https://via.placeholder.com/20x20" alt="Search Icon">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm" onkeyup="searchProducts()">
+            </div>
+        </div>
+        <div class="nav-icons">
+            <a href="register.html"><img src="https://via.placeholder.com/20x20" alt="Register"></a>
+            <a href="login.html"><img src="https://via.placeholder.com/20x20" alt="Login"></a>
+        </div>
+    </nav>
+
+    <!-- Second Navigation -->
+    <nav class="navigation2">
+        <div class="product-count" id="product-count">Số lượng sản phẩm: 0</div>
+        <div class="filters">
+            <select name="sort">
+                <option value="">Sắp xếp</option>
+                <option value="asc">Giá tăng dần</option>
+                <option value="desc">Giá giảm dần</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="product-service"></div> <!-- Placeholder for service -->
+
+    <footer>
+        &copy; 2024 Your Website. All rights reserved.
+    </footer>
+
+    <script src="product-service.js" type="module"></script>
+    <script>
+        // Include the service here
+        const productServiceContainer = document.getElementById('product-service');
+
+        fetch('product-service.html')
+            .then(response => response.text())
+            .then(html => {
+                productServiceContainer.innerHTML = html;
+                // Now you can initialize the product service JS
+            });
+    </script>
+</body>
+</html>
