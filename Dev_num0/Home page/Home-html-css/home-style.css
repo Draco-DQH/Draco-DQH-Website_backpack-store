@@ -1,0 +1,721 @@
+body {
+  display: flex;
+  flex-direction: column; /* Đặt hướng theo chiều dọc */
+  min-height: 100vh; /* Chiều cao tối thiểu của body */
+  margin: 0; /* Không có khoảng cách */
+}
+/* ==================== Tổng thể cho Header ==================== */
+header {
+  width: 100%; /*Chiều rộng header = chiều ngang trang*/
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /*Đổ bóng nhẹ tạo cảm giác nổi cho header*/
+  background-color: white; /*Màu nền trắng*/
+
+  /* Hiệu ứng sticky khi cho nav  */
+  position: sticky; /* đặt navigation cố định khi cuộn */
+  top: 0; /* Navigation dính vào đầu trang */
+  z-index: 1000; /* đặt trên các phần tử khác */
+}
+
+/* Header Top */
+.header_top {
+  display: flex; /*flex căn chỉnh các phần tử theo hàng ngang*/
+  justify-content: space-between; /*căn 2 phần (top-left và top-right) ra hai bên*/
+  align-items: center; /*căn giữa các phẩn tử bên trong theo trục dọc*/
+  padding: 10px 160px; /*thêm khoảng đệm xung quanh nội dung: trên/dưới, trái/phải*/
+  background-color: #000; /*nền màu đen*/
+  color: #fff; /*chữ màu trắng*/
+}
+
+/* Header top_left chứa p */
+.top_left p {
+  font-size: 14px; /*kích thước chữ slogan */
+  padding-left: 15px; /* Thêm khoảng cách từ trái để slogan thẳng hàng với logo */
+  display: flex; /* Sử dụng flex để căn chỉnh */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Header top_right chứa các a */
+.top_right a {
+  color: #fff; /*chữ màu trắng*/
+  margin-left: 15px; /*thêm khoảng cách giữa các liên kết*/
+  text-decoration: none; /*xóa gạch chân mặc định của liên kết*/
+  font-size: 14px; /*kích thước chữ*/
+}
+.top_right a:hover {
+  text-decoration: underline; /*khi hover, hiện gạch chân nổi bật*/
+}
+
+/* Header container  */
+.header_container {
+  display: grid; /*căn chỉnh các cột dạng lưới*/
+  grid-template-columns: 1fr 2fr 1fr; /*chia layout thành 3 cột: logo(1 phần), nav(2 phần), giỏ hàng và tìm kiếm(1 phần)*/
+  align-items: center; /*căn giữa nội dung bên trong theo trục dọc*/
+  padding: 15px 160px; /*khoảng đệm header: trên/dưới và trái/phải*/
+  background-color: white; /*nền màu trắng*/
+  border-bottom: 1px solid #f0f0f0; /*phần viền mỏng dưới header phân tách với trang*/
+}
+.container_left,
+.container_center,
+.container_right {
+  display: flex; /*flexbox để căn chỉnh nội dung */
+  align-items: center; /* các phần tử được căn giữa theo chiều dọc */
+  justify-content: center; /* căn giữa nội dung trong từng container */
+}
+
+/* Header container_left */
+.container_left {
+  display: flex;
+  flex: 1; /*không gian chiếm 1 phần container*/
+  margin-left: 0; /* Đặt margin bằng 0 để logo sát vào lề trái */
+  padding-left: 10px; /* Tùy chỉnh khoảng cách bằng padding */
+  text-align: left; /* Căn trái cho logo */
+  align-items: center;
+}
+.container_left a {
+  display: block; /*hình ảnh chiếm toàn bộ diện tích liên kết*/
+  font-size: 20px; /* kích thước chữ */
+  font-weight: 500; /* độ dày cho chữ */
+}
+.container_left img {
+  height: 60px; /*đặt chiều cao cố định cho img logo*/
+  width: auto; /*tự động chỉnh chiều rộng giữ tỷ lệ ảnh*/
+  display: block; /*loại bỏ khoảng cách dưới hình ảnh*/
+  margin: 0; /*xóa khoảng cách ngoài hình ảnh*/
+}
+
+/* Header container_center */
+.container_center {
+  flex: 2; /* navigation chiếm không gian 2 phần container */
+  justify-content: center; /* căn giữa nội dung của navigation */
+  text-align: center;
+}
+.container_center nav ul {
+  display: flex; /* flex các mục menu theo hàng ngang */
+  justify-content: space-around; /* khoảng cách đều giữa các mục menu */
+  list-style: none; /* xóa dấu chấm của danh sách */
+  margin: 0;
+  padding: 0;
+}
+.container_center nav ul li {
+  margin: 0 15px; /* Thêm khoảng cách giữa các mục menu */
+  position: relative; /* vị trí tương đối để menu con nằm dưới */
+}
+.container_center nav ul li a {
+  text-decoration: none; /* xóa gạch chân */
+  color: #000; /* màu chữ đen */
+  font-size: 20px; /* kích thước chữ */
+  font-weight: 500; /* độ dày chữ vừa phải */
+}
+.container_center nav ul li a:hover {
+  font-size: 20px; /* Tăng kích thước khi hover để nổi bật */
+  color: #ff6600; /*khi hover, chữ chuyển màu cam nhấn mạnh*/
+}
+/* Hiệu ứng đường gạch chân di chuyển(underline animation) */
+.container_center nav ul li a::after {
+  content: ""; /*tạo phần tử giả cho gạch chân*/
+  display: block;
+  width: 0; /* để gạch chân ban đầu = 0*/
+  height: 2px; /*độ dày của gạch chân*/
+  background: #ff6600; /*màu cam cho gạch chân*/
+  transition: width 0.3s ease; /*hiệu ứng mở rộng gạch chân*/
+  margin: 0 auto; /* căn giữa gạch chân */
+  position: relative; /* vị trí tương đối của gạch chân */
+  bottom: -5px; /*khoảng cách giữa gạch chân và text */
+}
+.container_center nav ul li a:hover::after {
+  width: 100%; /* Khi hover, gạch chân chạy dưới chiều dài chữ */
+}
+
+/* Menu con (Dropdown) */
+.container_center nav ul li .dropdown {
+  display: none; /* ẩn menu con */
+  position: absolute; /* vị trí menu con đặt dưới mục chính */
+  top: 100%; /* vị trí menu con ngay bên dưới mục chính */
+  left: 0;
+  background-color: #fff; /* màu nền trắng menu con */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* tạo đổ bóng nhẹ */
+  list-style: none; /* xóa dấu chấm của list */
+  padding: 10px 0; /* khoảng đệm trên và dưới */
+  width: 180px; /* chiều rộng menu con*/
+  z-index: 999; /* giữ menu con phía trên các phần tử khác */
+}
+.container_center nav ul li .dropdown li {
+  padding: 8px 15px; /* khoảng đệm trên/dưới và trái/phải bên trong menu con */
+  white-space: nowrap; /* không cho phép nội dung xuống dòng */
+}
+.container_center nav ul li .dropdown li a {
+  color: #000; /* màu chữ đen menu con */
+  font-size: 20px; /* kích thước chữ trong menu */
+}
+.container_center nav ul li:hover .dropdown {
+  display: block; /* hiện menu khi hover */
+  top: 100%; /* Đảm bảo menu con xuất hiện ngay dưới mục chính */
+}
+/* Hiệu ứng hover cho mục trong menu con */
+.container_center nav ul li .dropdown li:hover {
+  background-color: #f2f2f2; /* Nền sáng khi hover */
+  color: #ff6600; /* Đổi màu chữ khi hover */
+}
+
+/* Header container_right chứa tìm kiếm và giỏ hàng  */
+.container_right {
+  flex: 1; /*chiếm 1 phần không gian container*/
+  text-align: right; /* Căn phải cho biểu tượng giỏ hàng và tìm kiếm */
+}
+.container_right input {
+  padding: 10px 60px; /*khoảng đệm trong ô tìm kiếm: trên/dưới, trái/phải*/
+  font-size: 14px; /*kích thước chữ trong ô*/
+  border: 2px solid #000; /*đường viền xám nhat quanh ô*/
+  border-radius: 10px; /*bo tròn góc ô tìm kiếm*/
+  margin-right: 30px; /*khoảng cách giữa ô tìm kiếm và biểu tượng giỏ hàng*/
+}
+.container_right a {
+  margin-left: 20px; /* Tạo khoảng cách giữa các biểu tượng bên phải */
+  text-decoration: none; /*xóa gạch chân mặc định của liên kết*/
+  color: #000; /*chữ màu đen*/
+  font-size: 20px; /*kích thước chữ cho giỏ hàng*/
+}
+.container_right a:hover {
+  color: #ff6600; /*hover biểu tượng giỏ hàng, chữ chuyển màu cam*/
+}
+/* Hiệu ứng đường gạch chân di chuyển(underline animation) */
+.container_right a::after {
+  content: ""; /*tạo phần tử giả cho gạch chân*/
+  display: block;
+  width: 0; /* để gạch chân ban đầu = 0*/
+  height: 2px; /*độ dày của gạch chân*/
+  background: #ff6600; /*màu cam cho gạch chân*/
+  transition: width 0.3s ease; /*hiệu ứng mở rộng gạch chân*/
+  margin: 0 auto; /* căn giữa gạch chân */
+  position: relative; /* vị trí tương đối của gạch chân */
+  bottom: -5px; /*khoảng cách giữa gạch chân và text */
+}
+.container_right a:hover::after {
+  width: 100%; /* Khi hover, gạch chân chạy dưới chiều dài chữ */
+}
+
+/* ==================== Tổng thể cho Hero ==================== */
+.hero {
+  height: 80vh; /*chiều cao phần hero*/
+  background: url(../img/hero.jpg) no-repeat center center; /*hình nền không lặp và căn chỉnh giữa*/
+  background-size: cover; /*hình nền phủ đầy hero*/
+  display: flex; /*flexbox căn chỉnh nội dung*/
+  align-items: center; /*nội dung căn giữa theo chiều dọc*/
+  justify-content: center; /*nội dung căn giữa theo chiều ngang*/
+  color: #fff; /*chữ màu trắng*/
+  text-align: left; /*căn trái văn bản*/
+  padding: 20px; /*khoảng cách bên trong hero*/
+  position: relative; /*căn chỉnh các phần tử con*/
+  background-attachment: fixed; /* Giữ nền cố định khi cuộn trang */
+}
+
+/* Hero content  */
+.hero-content {
+  display: flex; /*flex sắp xếp các phần tử*/
+  flex-direction: row; /*săp xếp phần tử theo hàng ngang*/
+  align-items: center; /*căn giữa các phần tử theo chiều dọc*/
+  max-width: 1200px; /*chiều rộng tối đa cho hero*/
+  width: 100%; /*chiều rộng content = chiều rộng hero*/
+}
+/* Hero content left  */
+.hero-content-left {
+  flex: 1; /*chiếm toàn bộ không gian còn lại*/
+  padding: 20px; /*khoảng cách phần nội dung*/
+}
+.hero-content-left h2 {
+  font-size: 4rem; /*kích thước chữ lớn*/
+  color: #000; /*màu chữ đen cho tiêu đề h2*/
+  margin-bottom: 10px; /*khoảng cách giữa các tiêu đề và đoạn văn bản*/
+}
+.hero-content-left p {
+  font-size: 1.5rem; /* kích thước chữ nhỏ hơn tiêu đề */
+  color: #000; /*màu chữ cho p*/
+  margin-bottom: 30px; /* khoảng cách giữa đoạn văn bản và nút bấm */
+  text-align: center; /*căn giữa đoạn văn bản so với tiêu đề*/
+  display: inline-block; /*kích thước phù hợp với nội dung*/
+}
+
+/* Nút bấm btn  */
+.btn {
+  display: inline-block; /* hiển thị nút dưới dạng khối */
+  padding: 15px 30px; /* khoảng cách bên trong nút: trên/dưới, trái/phải */
+  font-size: 1.25rem; /* kích thước chữ */
+  color: #fff; /* màu chữ trắng */
+  background-color: #007bff; /* màu nền nút */
+  border: none; /* loại bỏ viền mặc định của nút */
+  border-radius: 5px; /* bo tròn các góc nút */
+  text-decoration: none; /* loại bỏ gạch chân */
+  transition: background-color 0.3s ease; /* hiệu ứng đổi màu nền khi di chuột */
+  margin-top: 20px; /* Khoảng cách từ đoạn văn bản đến nút bấm */
+}
+.btn:hover {
+  transform: scale(1.1); /*phóng to nút khi di chuột*/
+  background-color: #0056b3; /* màu nền nút khi di chuột qua */
+}
+
+/* Hero content right */
+.hero-content-right {
+  flex: 1; /*chiếm toàn bộ không gian còn lại*/
+}
+
+/* ==================== Tổng thể cho Products ==================== */
+
+/* Product  */
+.product {
+  padding: 20px; /* Khoảng cách xung quanh sản phẩm */
+  text-align: center; /* Căn giữa văn bản trong */
+  background-color: #f9f9f9; /* Màu nền sáng */
+  margin: 0 auto; /* Căn giữa phần sản phẩm */
+  max-width: 1200px; /* Đặt chiều rộng tối đa cho phần sản phẩm */
+}
+.product h2 {
+  text-align: center; /* căn giữa nội dung */
+  font-size: 2em; /* kích thước */
+  margin-bottom: 40px; /* khoảng cách dưới */
+  font-family: "Arial", sans-serif; /* Font chữ */
+  color: #333; /* Màu chữ đậm */
+}
+
+/* Product Container */
+.product-container {
+  display: grid; /* sắp xếp dạng lưới */
+  grid-template-columns: repeat(3, 1fr); /* Mỗi dòng chứa 3 sản phẩm */
+  gap: 20px; /* Khoảng cách giữa các sản phẩm */
+  justify-items: center; /* Căn giữa sản phẩm trong ô */
+}
+
+/* Product Items */
+.product-item {
+  background-color: #fff; /* màu nền */
+  padding: 5px; /* khoảng cách xung quanh ảnh với ô */
+  border-radius: 10px; /* Bo góc nhẹ tạo cảm giác mềm mại */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng để sản phẩm nổi lên */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng khi hover */
+  text-align: center; /* Căn giữa nội dung */
+  width: 80%;
+}
+.product-item:hover {
+  transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Bóng lớn hơn khi hover */
+}
+.product-item img {
+  width: 40%; /* Ảnh chiếm toàn bộ chiều ngang ô */
+  height: auto; /* chiều cao tự động */
+  border-radius: 20px; /* bo góc viền ảnh */
+  background-color: #fff; /* màu nền cho ảnh */
+  margin-bottom: 15px; /* khoảng cách dưới với ô */
+}
+.product-item h3 {
+  font-size: 1.2em; /* kích cỡ chữ */
+  color: #333; /* màu chữ */
+  margin-bottom: 10px; /* khoảng cách chữ dưới */
+  font-family: "Arial", sans-serif; /* font chữ */
+}
+.product-item .price {
+  font-size: 1.1em; /* kích thước */
+  color: #ff6b6b; /* màu chữ */
+  margin-bottom: 15px; /* khoảng cách dưới chữ */
+  font-weight: bold; /* độ đậm của chữ */
+}
+
+/* Button add cart  */
+.product-item .add-cart {
+  background-color: #ff6b6b; /* Màu nền  */
+  color: white; /* màu chữ */
+  border: none; /* bỏ viền */
+  padding: 10px 20px; /* khoảng cách trên/dưới, trái/phải */
+  border-radius: 10px; /* bo viền nút */
+  cursor: pointer; /* con trỏ tay khi hover */
+  transition: background-color 0.3s ease;
+}
+.product-item .add-cart:hover {
+  background-color: #ff4a4a; /* Đổi màu nút khi hover */
+}
+
+/* ==================== Tổng thể cho Featured-Categories ==================== */
+/* featured categories*/
+.featured-categories {
+  text-align: center; /* Căn giữa tiêu đề */
+  padding: 50px 0; /* Khoảng cách trên, dưới cho phần này */
+  background-color: #f9f9f9; /* Màu nền nhẹ nhàng */
+}
+.featured-categories h2 {
+  font-size: 28px; /* Kích thước chữ tiêu đề */
+  color: #000; /* Màu chữ tiêu đề */
+  margin-bottom: 40px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* categories container*/
+.categories-container {
+  display: flex;
+  justify-content: space-between; /* Căn đều khoảng cách giữa các danh mục */
+  align-items: center;
+  max-width: 1200px; /* Đặt kích thước tối đa cho khung chứa */
+  margin: 0 auto; /* Căn giữa khung chứa */
+  padding: 0 20px; /* Khoảng cách nhỏ ở hai bên lề trang */
+}
+
+/* categories items */
+.categories-item {
+  flex: 1; /* Để các mục chiếm đều không gian */
+  margin: 0 15px; /* Khoảng cách giữa các danh mục */
+  transition: transform 0.3s ease; /* Thêm hiệu ứng phóng to khi hover */
+}
+.categories-item a {
+  text-decoration: none; /* Loại bỏ gạch chân liên kết */
+  color: #333; /* Màu chữ mặc định */
+  display: block; /* Để toàn bộ khung là một block */
+}
+.categories-item img {
+  width: 100%; /* Hình ảnh tự động giãn theo kích thước của khung */
+  height: auto; /* Duy trì tỷ lệ hình ảnh */
+  border-radius: 8px; /* Bo góc hình ảnh để mềm mại hơn */
+  transition: transform 0.3s ease; /* Hiệu ứng khi hover vào hình */
+}
+
+/* hover */
+.categories-item:hover {
+  transform: scale(1.05); /* Phóng to khung chứa khi hover */
+}
+.categories-item img:hover {
+  transform: scale(1.1); /* Phóng to nhẹ hình ảnh khi hover */
+}
+/* categories h3*/
+.categories-item h3 {
+  font-size: 18px; /* Kích thước chữ tên danh mục */
+  margin-top: 10px; /* Khoảng cách phía trên hình ảnh */
+  color: #333; /* Màu chữ của tên danh mục */
+  font-weight: 600; /* Độ đậm của chữ */
+  text-transform: uppercase; /* Viết hoa toàn bộ tên danh mục */
+}
+
+/* ==================== Tổng thể cho Best Seller ==================== */
+/* Best seller*/
+.best-seller {
+  text-align: center; /* Căn giữa tiêu đề */
+  padding: 50px 0; /* Khoảng cách trên và dưới của phần này */
+  background-color: #fff; /* Màu nền trắng tinh tế */
+}
+.best-seller h2 {
+  font-size: 28px; /* Kích thước chữ tiêu đề */
+  color: #333; /* Màu chữ tiêu đề */
+  margin-bottom: 40px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Best seller container */
+.best-seller-container {
+  display: flex;
+  justify-content: space-between; /* Khoảng cách đều giữa các sản phẩm */
+  max-width: 1200px; /* Kích thước tối đa của khung chứa */
+  margin: 0 auto; /* Căn giữa phần sản phẩm */
+  padding: 0 20px; /* Khoảng cách nhỏ ở hai bên lề trang */
+}
+
+/* Best seller items */
+.best-seller-item {
+  flex: 1; /* Các mục chiếm đều không gian */
+  background-color: #f9f9f9; /* Nền nhẹ cho sản phẩm */
+  padding: 20px; /* Khoảng cách bên trong khung sản phẩm */
+  margin: 0 15px; /* Khoảng cách giữa các sản phẩm */
+  border-radius: 10px; /* Bo góc khung sản phẩm */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng khi hover */
+  position: relative; /* Để quản lý vị trí của nhãn "Mới" */
+}
+.best-seller-item:hover {
+  transform: translateY(-10px); /* Đẩy sản phẩm lên khi hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Tạo bóng nhẹ */
+}
+.best-seller-item figure {
+  margin: 0; /* Loại bỏ margin mặc định của thẻ figure */
+  position: relative; /* Để căn chỉnh nhãn "Mới" */
+}
+.best-seller-item img {
+  width: 100%; /* Hình ảnh tự động giãn theo kích thước của khung */
+  height: auto; /* Duy trì tỷ lệ hình ảnh */
+  border-radius: 8px; /* Bo góc hình ảnh */
+}
+
+/* new label */
+.new-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #e74c3c; /* Màu nền đỏ cho nhãn */
+  color: #fff; /* Màu chữ trắng */
+  font-size: 14px; /* Kích thước chữ nhãn */
+  padding: 5px 10px; /* Khoảng cách bên trong nhãn */
+  border-radius: 4px; /* Bo góc nhẹ cho nhãn */
+  text-transform: uppercase; /* Viết hoa toàn bộ chữ */
+}
+
+/* item h3*/
+.best-seller-item h3 {
+  font-size: 20px; /* Kích thước tên sản phẩm */
+  margin-top: 15px; /* Khoảng cách trên giữa hình ảnh và tên sản phẩm */
+  color: #333; /* Màu chữ */
+  font-weight: 600; /* Độ đậm của chữ */
+  text-transform: capitalize; /* Viết hoa chữ cái đầu */
+}
+
+/* item price */
+.best-seller-item .price {
+  font-size: 16px; /* Kích thước chữ giá */
+  margin-top: 10px; /* Khoảng cách giữa tên sản phẩm và giá */
+  color: #666; /* Màu xám cho giá */
+}
+
+/* Best seller add to cart */
+.best-seller-item .add-to-cart {
+  display: inline-block; /* Để nút là một block */
+  margin-top: 15px; /* Khoảng cách trên giữa giá và nút */
+  padding: 10px 20px; /* Khoảng cách bên trong nút */
+  background-color: #3498db; /* Màu nền xanh cho nút */
+  color: #fff; /* Màu chữ trắng */
+  border: none; /* Loại bỏ viền */
+  border-radius: 5px; /* Bo góc nhẹ */
+  cursor: pointer; /* Thay đổi con trỏ khi hover */
+  transition: background-color 0.3s ease; /* Hiệu ứng màu khi hover */
+}
+
+/* hover add to cart */
+.best-seller-item .add-to-cart:hover {
+  background-color: #2980b9; /* Đổi màu khi hover */
+}
+
+/* ==================== Tổng thể cho Sales ==================== */
+/* Tổng quan cho phần khuyến mãi */
+.promotion {
+  padding: 20px; /* Khoảng cách bên trong phần khuyến mãi */
+  text-align: center; /* Căn giữa nội dung trong phần khuyến mãi */
+  background-color: #f9f9f9; /* Màu nền cho phần khuyến mãi */
+  position: relative; /* Để sử dụng z-index cho ảnh nền */
+}
+
+/* Hình ảnh nền */
+.promotion::before {
+  content: ""; /* Tạo một phần tử giả để thêm hình ảnh nền */
+  background-image: url(../img/Banner.webp); /* Thay đổi đường dẫn đến ảnh nền */
+  background-size: cover; /* Đảm bảo hình ảnh lấp đầy không gian */
+  background-position: center; /* Căn giữa hình ảnh */
+  position: absolute; /* Đặt vị trí tuyệt đối để có thể đè lên các phần tử khác */
+  top: 0; /* Đặt phần tử tại vị trí trên cùng */
+  left: 0; /* Đặt phần tử tại vị trí bên trái */
+  right: 0; /* Đặt phần tử đến bên phải */
+  bottom: 0; /* Đặt phần tử đến dưới cùng */
+  z-index: -1; /* Đặt z-index thấp hơn để ảnh nền nằm phía sau các phần tử khác */
+}
+
+/* Tiêu đề khuyến mãi */
+.promotion h2 {
+  font-size: 24px; /* Kích thước font cho tiêu đề */
+  margin-bottom: 10px; /* Khoảng cách bên dưới tiêu đề */
+}
+
+/* Sản phẩm khuyến mãi (chỉ 1 sản phẩm) */
+.product-item {
+  margin: 20px auto; /* Khoảng cách bên ngoài sản phẩm và căn giữa sản phẩm */
+  border: 1px solid #ccc; /* Đường viền cho sản phẩm */
+  padding: 15px; /* Khoảng cách bên trong của sản phẩm */
+  width: 250px; /* Chiều rộng cố định cho sản phẩm */
+  text-align: center; /* Căn giữa nội dung bên trong sản phẩm */
+  background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng trong suốt*/
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng cho sản phẩm để làm nổi bật */
+  border-radius: 5px; /* Bo tròn các góc cho sản phẩm */
+}
+
+/* Hình ảnh sản phẩm */
+.product-item img {
+  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của sản phẩm */
+  height: auto; /* Giữ tỉ lệ khung hình của hình ảnh */
+}
+
+/* Giá sản phẩm */
+.price {
+  color: #ff0000; /* Màu chữ cho giá khuyến mãi */
+  font-weight: bold; /* Làm nổi bật giá khuyến mãi */
+  margin: 10px 0; /* Khoảng cách bên trên và dưới của giá */
+}
+
+/* Giá gốc sẽ bị gạch bỏ */
+.old-price {
+  text-decoration: line-through; /* Gạch bỏ giá gốc */
+  color: #999; /* Màu chữ cho giá gốc */
+}
+
+/* Nút thêm vào giỏ hàng */
+.add-to-cart {
+  margin-top: 10px; /* Khoảng cách bên trên nút thêm vào giỏ */
+  padding: 10px 20px; /* Khoảng cách bên trong nút (trên/dưới và trái/phải) */
+  background-color: #28a745; /* Màu nền cho nút thêm vào giỏ */
+  color: white; /* Màu chữ cho nút thêm vào giỏ */
+  border: none; /* Xóa đường viền của nút */
+  cursor: pointer; /* Đổi con trỏ chuột khi di chuột qua nút */
+  font-size: 14px; /* Kích thước chữ trong nút */
+}
+
+/* Đổi màu nền nút khi di chuột qua */
+.add-to-cart:hover {
+  background-color: #218838; /* Thay đổi màu nền khi di chuột qua */
+}
+
+/* Nút "Mua Ngay" cho toàn phần khuyến mãi */
+.cta-button {
+  margin-top: 20px; /* Khoảng cách bên trên nút */
+  padding: 12px 24px; /* Khoảng cách bên trong nút (trên/dưới và trái/phải) */
+  background-color: #007bff; /* Màu nền cho nút "Mua Ngay" */
+  color: white; /* Màu chữ cho nút */
+  border: none; /* Xóa đường viền của nút */
+  cursor: pointer; /* Đổi con trỏ chuột khi di chuột qua nút */
+  font-size: 16px; /* Kích thước chữ cho nút */
+}
+
+/* Đổi màu nền nút "Mua Ngay" khi di chuột qua */
+.cta-button:hover {
+  background-color: #0056b3; /* Màu nền mới khi di chuột qua nút */
+}
+
+/* ==================== Tổng thể cho Footer ==================== */
+/* Footer  */
+.footer {
+  background-color: #000; /* Màu nền đen */
+  color: white; /* Màu chữ trắng  */
+  padding: 20px; /* Khoảng cách trên và dưới rộng rãi */
+  text-align: center; /* Căn chữ theo lề trái */
+}
+
+/* Footer container  */
+.footer-container {
+  display: flex; /* Bố cục theo hàng ngang dạng lưới 3 cột */
+  justify-content: space-between; /* Khoảng cách đều giữa các cột */
+  flex-wrap: wrap; /* Đảm bảo footer vẫn đẹp trên các màn hình nhỏ */
+  max-width: 1200px; /* Chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa container */
+  padding: 0; /* xóa khoảng cách để cột sát lề */
+  gap: 20px; /* khoảng cách giữa các cột */
+}
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1; /* Các cột có chiều rộng bằng nhau */
+  padding: 0 10px; /* Khoảng cách bên trái và bên phải cho các cột */
+
+  display: flex; /* flexbox cho các cột */
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  justify-content: space-between; /* Tạo khoảng cách đều giữa tiêu đề và nội dung */
+}
+.footer h3 {
+  margin-bottom: 5px; /* Khoảng cách dưới tiêu đề */
+}
+.footer ul {
+  list-style: none; /* Loại bỏ dấu chấm đầu dòng */
+  padding: 0; /* Xóa khoảng cách */
+}
+.footer ul li {
+  margin: 8px 0; /* Khoảng cách giữa các mục trong danh sách */
+}
+.footer a {
+  text-decoration: none; /* Xóa gạch chân */
+  color: #007bff; /* Màu liên kết */
+}
+.footer a:hover {
+  text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* Footer Left: cột logo và contact info */
+.footer-left {
+  flex: 1; /* Cột chiếm 1 phần không gian */
+  min-width: 200px; /* Chiều rộng tối thiểu */
+  padding-left: 0; /* khoảng cách bên trái */
+  text-align: left; /* nội dung căn trái */
+}
+.footer-left img {
+  max-width: 100px; /* kích thước logo */
+  margin-bottom: 15px; /* Khoảng cách dưới logo */
+}
+/* Contact info  */
+.contact-info {
+  margin-top: 15px; /* Khoảng cách trên giữa logo và thông tin liên lạc */
+  font-size: 16px; /* Kích thước chữ nhỏ hơn để tạo sự tinh tế */
+  color: #aaa; /* Màu chữ tối cho dễ đọc */
+}
+.contact-info p {
+  margin: 20px 0; /* Khoảng cách giữa các đoạn văn trong thông tin liên lạc */
+}
+.contact-info a {
+  color: #007bff; /* Màu liên kết */
+  text-decoration: none; /* Xóa gạch chân */
+}
+.contact-info a:hover {
+  text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* Footer Center: liên kết nhanh */
+.footer-center {
+  min-width: 200px; /* chiều rộng tối thiểu*/
+  text-align: left;
+}
+.footer-center h3 {
+  font-size: 1.2rem; /* Kích thước tiêu đề của liên kết */
+  color: white; /* chữ màu trắng*/
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+.footer-center ul {
+  list-style-type: none; /* Loại bỏ gạch đầu dòng */
+  padding: 0;
+}
+.footer-center ul li {
+  margin-bottom: 10px; /* Khoảng cách giữa các liên kết */
+}
+.footer-center ul li a {
+  color: #ccc; /* Màu chữ trắng xám cho liên kết */
+  text-decoration: none; /* Loại bỏ gạch chân */
+  font-size: 1rem; /* Kích thước chữ của liên kết */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+}
+.footer-center ul li a:hover {
+  color: #ff4b5c; /* Đổi màu khi hover để tạo tương tác */
+}
+
+/* Footer Right: Chính sách */
+.footer-right {
+  min-width: 200px; /* Chiều rộng tối thiểu*/
+  text-align: left; /* căn lề trái nội dung*/
+}
+.footer-right h3 {
+  font-size: 1.5rem; /* Kích thước tiêu đề của chính sách */
+  color: white; /* chữ màu trắng */
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+.footer-right ul {
+  list-style-type: none; /* Loại bỏ gạch đầu dòng */
+  padding: 0;
+}
+.footer-right ul li {
+  margin-bottom: 10px; /* Khoảng cách giữa các liên kết */
+}
+.footer-right ul li a {
+  color: #ccc; /* Màu chữ xám */
+  text-decoration: none; /* Loại bỏ gạch chân */
+  font-size: 1rem; /* Kích thước chữ của liên kết */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+}
+.footer-right ul li a:hover {
+  color: #ff4b5c; /* Đổi màu khi hover để tạo tương tác */
+}
+
+/* Footer Bottom: Phần dưới cùng, bản quyền */
+.footer-bottom {
+  border-top: 1px solid #444; /* đường viền phía trên */
+  text-align: center; /* Căn giữa nội dung */
+  padding-top: 15px; /* khoảng cách dưới */
+  margin-top: 30px; /* Khoảng cách phía trên */
+  font-size: 16px; /* Kích thước chữ  */
+  color: #aaa; /* Màu xám nhạt cho phần bản quyền */
+}
+.footer-bottom a {
+  color: #ff4b5c; /* Màu đỏ giống mẫu */
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+}

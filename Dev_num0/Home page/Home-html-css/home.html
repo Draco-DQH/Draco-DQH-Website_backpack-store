@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang thương mại điện tử - Bán ba lô</title>
+    <link rel="stylesheet" href="css/home-style.css" />
+    <!-- Liên kết file CSS -->
+  </head>
+  <body>
+    <!-- Header Section: chứa thông tin logo, biểu tượng người dùng, và thanh tìm kiếm -->
+    <header>
+      <!-- Header top  -->
+      <div class="header_top">
+        <div class="top_left">
+          <p>Get your Bag - Feel your Lux.</p>
+        </div>
+        <div class="top_right">
+          <a href="/project balo test/log.html" target="_blank">Account</a>
+          |<a href="#">FAQs</a>
+        </div>
+      </div>
+      <!-- Header container  -->
+      <div class="header_container">
+        <div class="container_left">
+          <a href="index.html">
+            <img src="img/Logo.png" alt="BagLux Logo" />
+          </a>
+          <!-- Logo thương hiệu -->
+        </div>
+        <!-- Navigation sẽ nằm ở giữa -->
+        <div class="container_center">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="#">Products</a>
+                <!-- Menu con  -->
+                <ul class="dropdown">
+                  <li><a href="#">Common</a></li>
+                  <li><a href="#">Hot Product</a></li>
+                  <li><a href="#">Fashion</a></li>
+                </ul>
+              </li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Biểu tượng tìm kiếm và giỏ hàng ở bên phải -->
+        <div class="container_right">
+          <input type="text" placeholder="Tìm kiếm..." />
+          <a href="#">Cart</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section: Đây là phần giới thiệu, hình ảnh chính của trang web -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-content-left">
+            <h2>Welcome to BagLux</h2>
+            <p>Discover the best backpacks for you</p>
+            <a href="#" class="btn">Discover</a>
+          </div>
+          <div class="hero-content-right"></div>
+          <!-- Ô bên phải để trống -->
+        </div>
+      </section>
+
+      <!-- Product Section: Phần hiển thị danh sách sản phẩm  -->
+      <section class="product">
+        <h2>Our Products</h2>
+        <div class="product-container">
+          <div class="product-item">
+            <img src="img/balo1.webp" alt="Sp1" />
+            <h3>Backpack 1</h3>
+            <p class="price">Price: 100.000 VND</p>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-item">
+            <img src="img/balo2.webp" alt="Sp2" />
+            <h3>Backpack 2</h3>
+            <p class="price">Price: 150.000 VND</p>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-item">
+            <img src="img/balo3.jpg" alt="Sp3" />
+            <h3>Backpack 3</h3>
+            <p class="price">Price: 200.000 VND</p>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-item">
+            <img src="img/balo4.webp" alt="Sp4" />
+            <h3>Backpack 4</h3>
+            <p class="price">Price: 250.000 VND</p>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-item">
+            <img src="img/balo5.webp" alt="Sp5" />
+            <h3>Backpack 5</h3>
+            <p class="price">Price: 300.000 VND</p>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+
+          <div class="product-item">
+            <img src="img/balo6.jpg" alt="Sp6" />
+            <h3>Backpack 6</h3>
+            <p class="price">Price: 350.000 VND</p>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured categories Section: Danh mục nổi bật -->
+      <section class="featured-categories">
+        <h2>Featured</h2>
+
+        <!-- Khung chứa các danh mục -->
+        <div class="categories-container">
+          <div class="categories-item">
+            <a href="#">
+              <img src="img/Hot1.webp" alt="Sản phẩm hot 1" />
+              <h3>Man</h3>
+            </a>
+          </div>
+
+          <div class="categories-item">
+            <a href="#">
+              <img src="img/Hot2.webp" alt="Sản phẩm hot 2" />
+              <h3>Woman</h3>
+            </a>
+          </div>
+
+          <div class="categories-item">
+            <a href="#">
+              <img src="img/Hot3.webp" alt="Sản phẩm hot 3" />
+              <h3>Fashion</h3>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Best sellers: Sản phẩm bán chạy  -->
+      <section class="best-seller">
+        <h2>Best Seller Products</h2>
+
+        <div class="best-seller-container">
+          <article class="best-seller-item">
+            <!-- Thẻ figure giúp dễ quản lý hình ảnh và chú thích -->
+            <figure>
+              <span class="new-label">New</span>
+              <img src="img/Sale1.webp" alt="Sản phẩm bán chạy 1" />
+            </figure>
+            <h3>Best Seller 1</h3>
+            <p class="price">Price: 700.000 VNĐ</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </article>
+          <!-- Kết thúc sản phẩm -->
+
+          <article class="best-seller-item">
+            <figure>
+              <span class="new-label">New</span>
+              <img src="img/Sale2.webp" alt="Sản phẩm bán chạy 2" />
+            </figure>
+            <h3>Best Seller 2</h3>
+            <p class="price">Price: 800.000 VNĐ</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </article>
+
+          <article class="best-seller-item">
+            <figure>
+              <img src="img/Sale3.webp" alt="Sản phẩm bán chạy 3" />
+            </figure>
+            <h3>Best Seller 3</h3>
+            <p class="price">Price: 750.000 VNĐ</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </article>
+
+          <!-- Lặp lại cấu trúc nếu muốn thêm sản phẩm -->
+        </div>
+      </section>
+
+      <!-- Sales: Khuyến mãi -->
+      <section class="promotion">
+        <h2>SPECIAL OFFER</h2>
+        <p>
+          Chỉ trong tuần này, đừng bỏ lỡ cơ hội sở hữu sản phẩm yêu thích với
+          giá cực ưu đãi!
+        </p>
+        <img src="banner-promotion.jpg" alt="Khuyến Mãi" />
+
+        <div class="product-item">
+          <img src="product1.jpg" alt="Sản Phẩm 1" />
+          <h3>Tên Sản Phẩm 1</h3>
+          <p class="price">
+            <span class="old-price">800.000 VNĐ</span> 600.000 VNĐ
+          </p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+        </div>
+
+        <p class="additional-info">
+          Miễn phí vận chuyển cho đơn hàng trên 500.000 VNĐ.
+        </p>
+        <button class="cta-button">Mua Ngay</button>
+      </section>
+    </main>
+
+    <!-- Footer Section: Chứa thông tin liên hệ và các chính sách -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Cột bên trái: Logo và thông tin liên hệ -->
+        <div class="footer-left">
+          <img src="img/Logo.png" alt="BagLux Logo" />
+          <div class="contact-info">
+            <p>
+              BagLux - Địa chỉ uy tín cung cấp các loại ba lô thời trang và chất
+              lượng.
+            </p>
+            <p>
+              Email: <a href="mailto:contact@baglux.com">contact@baglux.com</a>
+            </p>
+            <p>Hotline: <strong>1900 123 456</strong></p>
+          </div>
+        </div>
+
+        <!-- Cột ở giữa: Liên kết nhanh -->
+        <div class="footer-center">
+          <h3>Liên kết nhanh</h3>
+          <ul>
+            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Khuyến mãi</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột bên phải: Chính sách -->
+        <div class="footer-right">
+          <h3>Chính sách</h3>
+          <ul>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Chính sách vận chuyển</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Điều khoản dịch vụ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bản quyền -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 BagLux. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
